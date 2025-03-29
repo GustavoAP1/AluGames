@@ -7,14 +7,14 @@ function alterarStatus(numbJogo){
     console.log(botaoJogo.textContent);
     console.log(`Selecionado jogo ${numbJogo}`);
 
-    if(botaoJogo.textContent=='Devolver'){
-        botaoJogo.className='dashboard__item__button';
-        imagemJogo.className='dashboard__item__img';
+    if(botaoJogo.classList.contains('dashboard__item__button--return')){
+        botaoJogo.classList.remove('dashboard__item__button--return');
+        imagemJogo.classList.remove('dashboard__item__img--rented');
         botaoJogo.textContent='Alugar';
         console.log('Desativado');
     }else{
-        botaoJogo.className='dashboard__item__button dashboard__item__button--return';
-        imagemJogo.className='dashboard__item__img dashboard__item__img--rented';
+        botaoJogo.classList.add('dashboard__item__button--return');
+        imagemJogo.classList.add('dashboard__item__img--rented');
         botaoJogo.textContent='Devolver';
         console.log('Ativado');
     }
